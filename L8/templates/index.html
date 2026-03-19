@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab 8 - Django Forms Lab</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+        }
+        
+        h1 {
+            color: #333;
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 32px;
+        }
+        
+        .section {
+            margin-bottom: 30px;
+        }
+        
+        .section-title {
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid;
+        }
+        
+        .questions {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        
+        .card {
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            border: 2px solid;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .card h3 {
+            margin-bottom: 12px;
+            font-size: 16px;
+        }
+        
+        .card p {
+            font-size: 13px;
+            margin-bottom: 15px;
+            line-height: 1.4;
+        }
+        
+        .card a {
+            display: inline-block;
+            padding: 10px 20px;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: bold;
+            transition: opacity 0.3s;
+        }
+        
+        .card a:hover {
+            opacity: 0.8;
+        }
+        
+        /* Q1 - Blue */
+        .q1 {
+            border-color: #007bff;
+            background-color: #f0f7ff;
+        }
+        
+        .q1 .section-title {
+            border-bottom-color: #007bff;
+            color: #007bff;
+        }
+        
+        .q1 a {
+            background-color: #007bff;
+        }
+        
+        /* Q2 - Red */
+        .q2 {
+            border-color: #dc3545;
+            background-color: #fff5f7;
+        }
+        
+        .q2 .section-title {
+            border-bottom-color: #dc3545;
+            color: #dc3545;
+        }
+        
+        .q2 a {
+            background-color: #dc3545;
+        }
+        
+        /* Q3 - Pink */
+        .q3 {
+            border-color: #e75480;
+            background-color: #fff5fa;
+        }
+        
+        .q3 .section-title {
+            border-bottom-color: #e75480;
+            color: #e75480;
+        }
+        
+        .q3 a {
+            background-color: #e75480;
+        }
+        
+        /* A1 - Orange */
+        .a1 {
+            border-color: #fd7e14;
+            background-color: #fff9f0;
+        }
+        
+        .a1 .section-title {
+            border-bottom-color: #fd7e14;
+            color: #fd7e14;
+        }
+        
+        .a1 a {
+            background-color: #fd7e14;
+        }
+        
+        /* A2 - Green */
+        .a2 {
+            border-color: #28a745;
+            background-color: #f0fff4;
+        }
+        
+        .a2 .section-title {
+            border-bottom-color: #28a745;
+            color: #28a745;
+        }
+        
+        .a2 a {
+            background-color: #28a745;
+        }
+        
+        .card h3 {
+            color: inherit;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>📚 Lab 8 - Django Forms Lab</h1>
+        
+        <div class="section q1">
+            <div class="section-title">Questions</div>
+            <div class="questions">
+                <div class="card q1">
+                    <h3>Q1: Register & Success</h3>
+                    <p>Register page with username, password, email, and contact number. Display welcome message with stored data.</p>
+                    <a href="/q1/register/">Go to Q1</a>
+                </div>
+                
+                <div class="card q2">
+                    <h3>Q2: Voting System</h3>
+                    <p>Vote on "How is ASP.NET with C# by Vipul Prakashan?" and see results in percentage.</p>
+                    <a href="/q2/vote/">Go to Q2</a>
+                </div>
+                
+                <div class="card q3">
+                    <h3>Q3: CGPA Calculator</h3>
+                    <p>Enter name and marks to calculate CGPA (marks/50) using Django sessions.</p>
+                    <a href="/q3/calculate/">Go to Q3</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section a1">
+            <div class="section-title">Additional Questions</div>
+            <div class="questions">
+                <div class="card a1">
+                    <h3>A1: Bill Generator</h3>
+                    <p>Select phone brand, devices (Mobile/Laptop), and quantity to generate bill.</p>
+                    <a href="/a1/bill/">Go to A1</a>
+                </div>
+                
+                <div class="card a2">
+                    <h3>A2: Feedback Form</h3>
+                    <p>Submit coursework feedback with name, gender, course selection, and suggestions.</p>
+                    <a href="/a2/feedback/">Go to A2</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Result - Q3</title>
+    <link rel="stylesheet" href="/static/css/q3.css">
+</head>
+<body>
+    <div class="container q3-container">
+        <h1>CGPA Result</h1>
+        <div class="result-info">
+            <p><strong>Student Name:</strong> {{ name }}</p>
+            <p><strong>Total Marks:</strong> {{ marks }}</p>
+            <p><strong>CGPA (Marks/50):</strong> {{ cgpa }}</p>
+        </div>
+        <a href="{% url 'q3:calculate' %}" class="btn-link">Calculate Again</a>
+    </div>
+</body>
+</html>

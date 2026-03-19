@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bill Generator - A1</title>
+    <link rel="stylesheet" href="/static/css/a1.css">
+</head>
+<body>
+    <div class="container a1-container">
+        <h1>Bill Generator</h1>
+        <form method="POST">
+            {% csrf_token %}
+            
+            <div class="form-group">
+                <label>Select Brand:</label>
+                {{ form.brand }}
+            </div>
+
+            <div class="form-group">
+                <label>Select Device(s):</label>
+                {{ form.devices }}
+            </div>
+
+            <div class="form-group">
+                <label for="{{ form.quantity.id_for_label }}">{{ form.quantity.label }}</label>
+                {{ form.quantity }}
+            </div>
+
+            <button type="submit" class="btn-submit">Produce Bill</button>
+        </form>
+    </div>
+</body>
+</html>

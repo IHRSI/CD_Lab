@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vote - Q2</title>
+    <link rel="stylesheet" href="/static/css/q2.css">
+</head>
+<body>
+    <div class="container q2-container">
+        <h1>How is the book ASP.NET with C# by Vipul Prakashan?</h1>
+        <form method="POST">
+            {% csrf_token %}
+            <div class="form-group">
+                <label>
+                    <input type="radio" name="choice" value="good" required>
+                    Good
+                </label>
+            </div>
+            <div class="form-group">
+                <label>
+                    <input type="radio" name="choice" value="satisfactory" required>
+                    Satisfactory
+                </label>
+            </div>
+            <div class="form-group">
+                <label>
+                    <input type="radio" name="choice" value="bad" required>
+                    Bad
+                </label>
+            </div>
+            <button type="submit" class="btn-submit">VOTE</button>
+        </form>
+    </div>
+</body>
+</html>

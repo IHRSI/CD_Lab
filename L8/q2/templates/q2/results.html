@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Results - Q2</title>
+    <link rel="stylesheet" href="/static/css/q2.css">
+</head>
+<body>
+    <div class="container q2-container">
+        <h1>Voting Results</h1>
+        <div class="results">
+            <div class="result-item">
+                <label>Good:</label>
+                <span class="percentage">{{ good_percent }}%</span>
+                <span class="votes">({{ good_votes }} votes)</span>
+            </div>
+            <div class="result-item">
+                <label>Satisfactory:</label>
+                <span class="percentage">{{ satisfactory_percent }}%</span>
+                <span class="votes">({{ satisfactory_votes }} votes)</span>
+            </div>
+            <div class="result-item">
+                <label>Bad:</label>
+                <span class="percentage">{{ bad_percent }}%</span>
+                <span class="votes">({{ bad_votes }} votes)</span>
+            </div>
+            <div class="result-item total">
+                <label>Total Votes:</label>
+                <span>{{ total }}</span>
+            </div>
+        </div>
+        <a href="{% url 'q2:vote' %}" class="btn-link">Vote Again</a>
+    </div>
+</body>
+</html>

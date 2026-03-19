@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bill Result - A1</title>
+    <link rel="stylesheet" href="/static/css/a1.css">
+</head>
+<body>
+    <div class="container a1-container">
+        <h1>Bill Summary</h1>
+        {% if items %}
+            <table class="bill-table">
+                <thead>
+                    <tr>
+                        <th>Brand</th>
+                        <th>Device</th>
+                        <th>Unit Price</th>
+                        <th>Quantity</th>
+                        <th>Total</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for item in items %}
+                        <tr>
+                            <td>{{ item.brand }}</td>
+                            <td>{{ item.device }}</td>
+                            <td>₹{{ item.price }}</td>
+                            <td>{{ item.quantity }}</td>
+                            <td>₹{{ item.total }}</td>
+                        </tr>
+                    {% endfor %}
+                    <tr class="total-row">
+                        <td colspan="4"><strong>Total Amount:</strong></td>
+                        <td><strong>₹{{ total_amount }}</strong></td>
+                    </tr>
+                </tbody>
+            </table>
+        {% else %}
+            <p>No items in bill</p>
+        {% endif %}
+        <a href="{% url 'a1:bill' %}" class="btn-link">Generate Another Bill</a>
+    </div>
+</body>
+</html>

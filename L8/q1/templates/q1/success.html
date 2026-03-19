@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Success - Q1</title>
+    <link rel="stylesheet" href="/static/css/q1.css">
+</head>
+<body>
+    <div class="container q1-container">
+        <h1>Welcome {{ username }}</h1>
+        <div class="success-info">
+            {% if email %}
+                <p><strong>Email:</strong> {{ email }}</p>
+            {% endif %}
+            {% if contact %}
+                <p><strong>Contact Number:</strong> {{ contact }}</p>
+            {% endif %}
+        </div>
+        <a href="{% url 'q1:register' %}" class="btn-link">Register Again</a>
+    </div>
+</body>
+</html>

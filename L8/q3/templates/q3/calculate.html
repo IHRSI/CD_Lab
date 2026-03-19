@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CGPA Calculator - Q3</title>
+    <link rel="stylesheet" href="/static/css/q3.css">
+</head>
+<body>
+    <div class="container q3-container">
+        <h1>CGPA Calculator</h1>
+        <form method="POST">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="{{ form.name.id_for_label }}">{{ form.name.label }}</label>
+                {{ form.name }}
+            </div>
+
+            <div class="form-group">
+                <label for="{{ form.marks.id_for_label }}">{{ form.marks.label }}</label>
+                {{ form.marks }}
+            </div>
+
+            <button type="submit" class="btn-submit">Calculate</button>
+        </form>
+    </div>
+</body>
+</html>
